@@ -71,6 +71,7 @@ public class Assets implements Disposable, AssetErrorListener {
 		fonts.defaultBig.dispose();
 	}
 
+	@SuppressWarnings("rawtypes")
 	@Override
 	public void error(AssetDescriptor asset, Throwable throwable) {
 		Gdx.app.error(TAG, "Couldn't load asset '" + asset + "'",

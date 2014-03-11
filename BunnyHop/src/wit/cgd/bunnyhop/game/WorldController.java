@@ -1,17 +1,5 @@
 package wit.cgd.bunnyhop.game;
 
-import wit.cgd.bunnyhop.util.CameraHelper;
-import wit.cgd.bunnyhop.util.Constants;
-
-import com.badlogic.gdx.Application.ApplicationType;
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Input.Keys;
-import com.badlogic.gdx.InputAdapter;
-import com.badlogic.gdx.graphics.Pixmap;
-import com.badlogic.gdx.graphics.Pixmap.Format;
-import com.badlogic.gdx.math.MathUtils;
-import com.badlogic.gdx.math.Rectangle;
-
 import wit.cgd.bunnyhop.game.objects.BunnyHead;
 import wit.cgd.bunnyhop.game.objects.BunnyHead.JUMP_STATE;
 import wit.cgd.bunnyhop.game.objects.Carrot;
@@ -19,6 +7,15 @@ import wit.cgd.bunnyhop.game.objects.Feather;
 import wit.cgd.bunnyhop.game.objects.Goal;
 import wit.cgd.bunnyhop.game.objects.GoldCoin;
 import wit.cgd.bunnyhop.game.objects.Rock;
+import wit.cgd.bunnyhop.util.CameraHelper;
+import wit.cgd.bunnyhop.util.Constants;
+
+import com.badlogic.gdx.Application.ApplicationType;
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input.Keys;
+import com.badlogic.gdx.InputAdapter;
+import com.badlogic.gdx.math.MathUtils;
+import com.badlogic.gdx.math.Rectangle;
 
 public class WorldController extends InputAdapter {
 
@@ -103,25 +100,6 @@ public class WorldController extends InputAdapter {
 			else
 				initLevel();
 		}
-	}
-
-	private Pixmap createProceduralPixmap(int width, int height) {
-
-		Pixmap pixmap = new Pixmap(width, height, Format.RGBA8888);
-
-		// Fill square with red color at 50% opacity
-		pixmap.setColor(1, 0, 0, 0.5f);
-		pixmap.fill();
-
-		// Draw a yellow-colored X shape on square
-		pixmap.setColor(1, 1, 0, 1);
-		pixmap.drawLine(0, 0, width, height);
-		pixmap.drawLine(width, 0, 0, height);
-
-		// Draw a cyan-colored border around square
-		pixmap.setColor(0, 1, 1, 1);
-		pixmap.drawRectangle(0, 0, width, height);
-		return pixmap;
 	}
 
 	@Override
